@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #f7f5ef;
+  --color-paper: #fcfaf6;
+  --color-ink: #16181d;
+  --color-slate: #667085;
+  --color-navy: #071a36;
+  --color-navy-deep: #041128;
+  --color-gold: #f4b000;
+  --color-gold-text: #996300;
+  --color-gold-soft: #fff0c2;
+  --color-success: #18a66a;
+  --color-success-text: #0b7a50;
+  --color-danger: #e45864;
+}
+
+:root {
+  font-family: "Geist Variable", system-ui, sans-serif;
+  color: #16181d;
+  background: #f7f5ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; }
+button, a { font: inherit; }
+::selection { background: #fff0c2; color: #16181d; }
+:focus-visible { outline: 2px solid #16181d; outline-offset: 3px; box-shadow: 0 0 0 3px #f4b000; }
+.page-shell { width: min(100% - 64px, 1280px); margin-inline: auto; }
+[data-section="demo"] { min-height: var(--demo-desktop-min-height); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media (max-width: 1024px) { .page-shell { width: min(100% - 48px, 1280px); } }
+@media (max-width: 640px) {
+  .page-shell { width: min(100% - 32px, 1280px); }
+  [data-section="demo"] { min-height: var(--demo-mobile-min-height); }
+  button, input { min-width: 44px; min-height: 44px; }
+}
